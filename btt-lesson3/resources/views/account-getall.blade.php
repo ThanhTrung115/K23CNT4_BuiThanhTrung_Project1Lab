@@ -23,7 +23,7 @@
                     <td>{{$item->id}}</td>
                     <td>{{$item->UserName}}</td>
                     <td>{{$item->Password}}</td>
-                    <td>{{$item=>FullName}}</td>
+                    <td>{{$item->FullName}}</td>
                 </tr>
             @endforeach
         </tbody>
