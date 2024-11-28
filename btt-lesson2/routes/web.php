@@ -88,8 +88,8 @@ Route::get('/search/{search?}', function ($search) {
 Route::get('/named/profile',function() {
     return "<h1> Đặt tên cho Route </h1>";
 })->name('named.profile');
-Route::get('/named/display',[NamedProfileController::class, 'display'])->name('display.profile');
-Route::get('/named/show',[NamedProfileController::class, 'show']);
+Route::get('/named/display',[bttNamedProfileController::class, 'display'])->name('display.profile');
+Route::get('/named/show',[bttNamedProfileController::class, 'show']);
 
 #Route Group Prefix
 Route::group(['prefix'=>'admin'],function() {

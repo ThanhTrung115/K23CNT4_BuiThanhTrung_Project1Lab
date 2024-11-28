@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AccountController;
+use App\Http\Controllers\bttAccountController;
 use App\Http\Controllers\DB;
 
 /*
@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 #Route Account Controller
-Route::get('/account',[AccountController::class,'index'])->name('account.index');
-Route::get('/account-create',[AccountController::class,'create'])->name('account.create');
-Route::get('/account-show',[AccountController::class,'showData'])->name('account.show');
-Route::get('/account-list',[AccountController::class,'list'])->name('account.list');
-Route::get('/account-getall',[AccountController::class,'getAllAccount'])->name('account.getallaccount');
+Route::get('/btt-account',[bttAccountController::class,'index'])->name('account.index');
+Route::get('/btt-account-create',[bttAccountController::class,'create'])->name('account.create');
+Route::get('/btt-account-show',[bttAccountController::class,'showData'])->name('account.show');
+Route::get('/btt-account-list',[bttAccountController::class,'list'])->name('account.list');
+Route::get('/btt-account-getall',[bttAccountController::class,'getAllAccount'])->name('account.getallaccount');

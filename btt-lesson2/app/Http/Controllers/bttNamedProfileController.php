@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class NamedProfileController extends Controller
+class bttNamedProfileController extends Controller
 {
     public function display()
     {

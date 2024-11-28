@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AccountController extends Controller
+class bttAccountController extends Controller
 {
     public function index()
     {
@@ -18,7 +18,7 @@ class AccountController extends Controller
     public function showData()
     {
         $data = array('2310900108', 'Bùi Thành Trung');
-        return view('account-show', compact('data'));
+        return view('account-show', ['show'=>$data]);
     }
     public function list()
     {
@@ -26,11 +26,11 @@ class AccountController extends Controller
             ["id"=>1,"Username"=>"ThanhTrung","Password"=>"123456@","Fullname"=>"Bùi Thành Trung"],
             ["id"=>2,"Username"=>"Devmaster","Password"=>"123456@","Fullname"=>"Devmaster Academy"]
         );
-        return view('account-list',compact('data'));
+        return view('account-list',['list'=>$data]);
     }
     public function getAllAccount()
     {
         $data = DB::table('account')->get();
-        return view('account-getall',compact('data'));
+        return view('account-getall',['model'=>$data]);
     }
 }
