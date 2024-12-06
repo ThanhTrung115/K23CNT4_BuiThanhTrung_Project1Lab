@@ -14,7 +14,13 @@ use App\Http\Controllers\BttProductController;
 |
 */
 
-Route::get('/', [BttProductController::class,'bttindex']);
+Route::get('/',function(){
+    return view('welcome');
+});
+
+Route::get('/test',function(){
+    return view('test');
+});
 
 #Views
 Route::get('/btt-view-1',function(){return view('view-1',['name'=>'Devmaster Academy']);});
