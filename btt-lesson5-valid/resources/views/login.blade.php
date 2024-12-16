@@ -17,6 +17,13 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
+                    <label for="fullName" class="form-label">FullName:</label>
+                    <input type="text" name="fullName" id="fullName" class="form-control" placeholder="name@example.com">
+                    @error('fullName')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com">
                     @error('email')
@@ -33,6 +40,12 @@
             </div>
             <div class="card-footer">
                 <input type="submit" value="Submit" name="btnSubmit" class="btn btn-primary">
+
+                @if (Session::has('error'))
+                    <div class="alert alert-danger">
+                        {{Session::get('error')}}
+                    </div>
+                @endif
             </div>
         </div>
     </form>
