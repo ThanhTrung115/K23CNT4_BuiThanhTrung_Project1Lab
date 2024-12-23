@@ -1,5 +1,5 @@
 @extends('_layouts.admins._master')
-@section('title','Danh sách loại sản phẩm')
+@section('title','Thêm mới loại sản phẩm')
     
 @section('content-body')
     <div class="container border">

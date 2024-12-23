@@ -33,7 +33,10 @@
                             <td>{{$item->bttTenLoai}}</td>
                             <td>{{$item->bttTrangThai}}</td>
                             <td>
-                                view / edit / delete
+                                <a href="/btt-admins/btt-loai-san-pham/btt-view/{{$item->id}}">View</a> / 
+                                <a href="/btt-admins/btt-loai-san-pham/btt-edit/{{$item->id}}">Edit</a>
+                                 / <a href="/btt-admins/btt-loai-san-pham/btt-delete/{{$item->id}}"
+                                    onclick="return confirm('Bạn có muốn xóa không?')">Delete</a>
                             </td>
                         </tr>
                     @empty

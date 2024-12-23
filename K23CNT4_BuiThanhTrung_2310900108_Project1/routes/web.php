@@ -27,12 +27,18 @@ Route::get('/btt-admins',function(){
     return view('bttAdmins.index');
 });
 
+#LOAI_SAN_PHAM
 Route::get('/btt-admins/btt-loai-san-pham',[BTT_LOAI_SAN_PHAMController::class,'bttList'])->name('bttadmins.bttloaisanpham');
+#Create - LOAI_SAN_PHAM
 Route::get('/btt-admins/btt-loai-san-pham/btt-create',[BTT_LOAI_SAN_PHAMController::class,'bttCreate'])->name('bttadmins.bttloaisanpham.bttcreate');
 Route::post('/btt-admins/btt-loai-san-pham/btt-create',[BTT_LOAI_SAN_PHAMController::class,'bttCreateSubmit'])->name('bttadmins.bttloaisanpham.bttcreatesubmit');
-#Edit
+#Edit - LOAI_SAN_PHAM
 Route::get('/btt-admins/btt-loai-san-pham/btt-edit/{id}',[BTT_LOAI_SAN_PHAMController::class,'bttEdit'])->name('bttadmins.bttloaisanpham.bttedit');
 Route::post('/btt-admins/btt-loai-san-pham/btt-edit',[BTT_LOAI_SAN_PHAMController::class,'bttEditSubmit'])->name('bttadmins.bttloaisanpham.btteditsubmit');
+#Delete - LOAI_SAN_PHAM
+Route::get('/btt-admins/btt-loai-san-pham/btt-delete/{id}',[BTT_LOAI_SAN_PHAMController::class,'bttDelete'])->name('bttadmins.bttloaisanpham.bttdelete');
+#View - LOAI_SAN_PHAM
+Route::get('/btt-admins/btt-loai-san-pham/btt-view/{id}',[BTT_LOAI_SAN_PHAMController::class,'bttView'])->name('bttadmins.bttloaisanpham.bttview');
 
 #SanPham
 Route::get('/btt-admins/btt-san-pham',[BTT_SAN_PHAMController::class,'bttList'])->name('bttadmins.bttsanpham');

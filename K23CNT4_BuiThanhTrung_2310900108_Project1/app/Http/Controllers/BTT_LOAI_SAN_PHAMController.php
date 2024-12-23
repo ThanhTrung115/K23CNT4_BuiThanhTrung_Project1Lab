@@ -49,9 +49,26 @@ class BTT_LOAI_SAN_PHAMController extends Controller
     //edit - submit
     public function bttEditSubmit(request $request)
     {
-        $maloai = $request->bttMaLoai;
-        $tenloai = $request->bttTenLoai;
-        DB::update("UPDATE btt_loai_san_pham set bttTenLoai = ? where bttMaLoai = ?",[$maloai,$tenloai]);
-        return redirect('/btt-admins/btt-loai-san-pham');
+        $bttLoaiSanPham = BTT_LOAI_SAN_PHAM::find($request->id);
+        $bttLoaiSanPham->bttMaLoai = $request->bttMaLoai;
+        $bttLoaiSanPham->bttTenLoai = $request->bttTenLoai;
+        $bttLoaiSanPham->bttTrangThai = $request->bttTrangThai;
+        $bttLoaiSanPham->save();
+        return redirect()->route('bttadmins.bttloaisanpham');
+    }
+
+    //get - delete
+    public function bttDelete($id)
+    {
+        $bttLoaiSanPham = BTT_LOAI_SAN_PHAM::find($id);
+        $bttLoaiSanPham->delete();
+        return redirect()->route('bttadmins.bttloaisanpham');
+    }
+
+    //get - view
+    public function bttView($id)
+    {
+        $bttLoaiSanPham = BTT_LOAI_SAN_PHAM::find($id);
+        return view('bttAdmins.bttLoaiSanPham.btt-view',['bttLoaiSanPham'=>$bttLoaiSanPham]);
     }
 }
